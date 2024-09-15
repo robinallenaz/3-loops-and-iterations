@@ -11,17 +11,17 @@ const maxCapacity = Math.floor(area / minSpacePerPlant);
 
 //Calculates plant growth after a given number of weeks
 function willPlantGrow(weeks) {
-    let plantCount = startingPlants * Math.pow(2, weeks);
+  let plantCount = startingPlants * Math.pow(2, weeks);
 }
 
- // Log a different statement to the console depending on plantCount
- if (plantCount > 0.8 * maxCapacity) {
-    console.log("Recommendation: Prune the plants.");
-  } else if (plantCount > 0.5 * maxCapacity) {
-    console.log("Recommendation: Monitor the plants.");
-  } else {
-    console.log("Recommendation: Plant more plants.");
-  }
+// Log a different statement to the console depending on plantCount
+if (plantCount > 0.8 * maxCapacity) {
+  console.log("Recommendation: Prune the plants.");
+} else if (plantCount > 0.5 * maxCapacity) {
+  console.log("Recommendation: Monitor the plants.");
+} else {
+  console.log("Recommendation: Plant more plants.");
+}
 
 // Predict growth for 1, 2, and 3 weeks
 predictPlantGrowth(1);
@@ -37,9 +37,37 @@ function calculateSpaceAndRadius(weeks, startingPlants) {
   const requiredSpace = plantCount * minSpacePerPlant;
   const newRadius = Math.sqrt(requiredSpace / PI);
 
-  console.log(`After ${weeks} weeks, you will need ${requiredSpace.toFixed(2)} square meters of space.`);
-  console.log(`The expanded garden would need a radius of ${newRadius.toFixed(2)} meters.`);
+  console.log(
+    `After ${weeks} weeks, you will need ${requiredSpace.toFixed(
+      2
+    )} square meters of space.`
+  );
+  console.log(
+    `The expanded garden would need a radius of ${newRadius.toFixed(2)} meters.`
+  );
 }
 
 // Predict growth for 10 weeks
 calculateSpaceAndRadius(10, startingPlants2);
+
+//Part 3: error handling with try-catch block
+
+// Part 3: Error handling with try-catch
+
+function checkGardenCapacity(startingPlants, radius, weeks) {
+  const gardenArea = PI * radius * radius;
+  const maxCapacity = Math.floor(gardenArea / MIN_SPACE_PER_PLANT);
+  const plantCount = startingPlants * Math.pow(2, weeks);
+
+  try {
+    if (plantCount > maxCapacity) {
+      throw new Error("Garden capacity exceeded!");
+    }
+    console.log(`After ${weeks} weeks, the garden can still hold the plants.`);
+  } catch (error) {
+    console.error(`Error: ${error.message}. You need a bigger garden!`);
+  }
+}
+
+// Check for 100 plants in a garden with a radius of 5 meters after 10 weeks
+checkGardenCapacity(100, 5, 10);
