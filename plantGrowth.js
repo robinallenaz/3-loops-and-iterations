@@ -22,9 +22,9 @@ function willPlantGrow(weeks) {
 }
 
 // Predict growth for 1, 2, and 3 weeks
-predictPlantGrowth(1);
-predictPlantGrowth(2);
-predictPlantGrowth(3);
+willPlantGrow(1);
+willPlantGrow(2);
+willPlantGrow(3);
 
 //Part 2: If starting with 100 plants
 
