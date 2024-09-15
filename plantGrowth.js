@@ -12,15 +12,13 @@ const maxCapacity = Math.floor(area / minSpacePerPlant);
 //Calculates plant growth after a given number of weeks
 function willPlantGrow(weeks) {
   let plantCount = startingPlants * Math.pow(2, weeks);
-}
-
-// Log a different statement to the console depending on plantCount
-if (plantCount > 0.8 * maxCapacity) {
-  console.log("Recommendation: Prune the plants.");
-} else if (plantCount > 0.5 * maxCapacity) {
-  console.log("Recommendation: Monitor the plants.");
-} else {
-  console.log("Recommendation: Plant more plants.");
+  if (plantCount > 0.8 * maxCapacity) {
+    console.log("Recommendation: Prune the plants.");
+  } else if (plantCount > 0.5 * maxCapacity) {
+    console.log("Recommendation: Monitor the plants.");
+  } else {
+    console.log("Recommendation: Plant more plants.");
+  }
 }
 
 // Predict growth for 1, 2, and 3 weeks
