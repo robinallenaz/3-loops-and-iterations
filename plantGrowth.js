@@ -29,3 +29,17 @@ predictPlantGrowth(2);
 predictPlantGrowth(3);
 
 //Part 2: If starting with 100 plants
+
+const startingPlants2 = 100;
+
+function calculateSpaceAndRadius(weeks, startingPlants) {
+  const plantCount = startingPlants * Math.pow(2, weeks);
+  const requiredSpace = plantCount * minSpacePerPlant;
+  const newRadius = Math.sqrt(requiredSpace / PI);
+
+  console.log(`After ${weeks} weeks, you will need ${requiredSpace.toFixed(2)} square meters of space.`);
+  console.log(`The expanded garden would need a radius of ${newRadius.toFixed(2)} meters.`);
+}
+
+// Predict growth for 10 weeks
+calculateSpaceAndRadius(10, startingPlants2);
