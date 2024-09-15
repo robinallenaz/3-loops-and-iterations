@@ -8,3 +8,19 @@ let week = 0;
 //Calculates the area of the garden
 const area = PI * radius * radius;
 const maxCapacity = Math.floor(area / minSpacePerPlant);
+
+//Calculates plant growth after a given number of weeks
+function willPlantGrow(weeks) {
+    let plantCount = startingPlants * Math.pow(2, weeks)
+}
+
+ // Decision based on the percentage of maximum capacity
+ if (plantCount > 0.8 * maxCapacity) {
+    console.log("Recommendation: Prune the plants.");
+  } else if (plantCount > 0.5 * maxCapacity) {
+    console.log("Recommendation: Monitor the plants.");
+  } else {
+    console.log("Recommendation: Plant more plants.");
+  }
+
+
