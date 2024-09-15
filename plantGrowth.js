@@ -54,7 +54,6 @@ calculateSpaceAndRadius(10, startingPlants2);
 
 function checkGardenCapacity(startingPlants, radius, weeks) {
   const gardenArea = PI * radius * radius;
-  const maxCapacity = Math.floor(gardenArea / minSpacePerPlant);
   const plantCount = startingPlants * Math.pow(2, weeks);
 
   try {
