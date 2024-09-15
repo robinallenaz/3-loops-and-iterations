@@ -14,7 +14,7 @@ function willPlantGrow(weeks) {
     let plantCount = startingPlants * Math.pow(2, weeks)
 }
 
- // Decision based on the percentage of maximum capacity
+ // Log a different statement to the console depending on plantCount
  if (plantCount > 0.8 * maxCapacity) {
     console.log("Recommendation: Prune the plants.");
   } else if (plantCount > 0.5 * maxCapacity) {
@@ -23,4 +23,7 @@ function willPlantGrow(weeks) {
     console.log("Recommendation: Plant more plants.");
   }
 
-
+// Predict growth for 1, 2, and 3 weeks
+predictPlantGrowth(1);
+predictPlantGrowth(2);
+predictPlantGrowth(3);
